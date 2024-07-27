@@ -39,7 +39,10 @@ const Contact = () => {
     setSuccess("");
 
     try {
-      await axios.post("http://localhost:5000/api/contactDetails", formData);
+      await axios.post(
+        "https://rupak-portfolio.onrender.com/api/contactDetails",
+        formData
+      );
 
       setSuccess("Message Sent Successfully!");
       setFormData({
@@ -56,13 +59,20 @@ const Contact = () => {
 
   return (
     <div>
-      
       <div className="contact_title">LET'S GET CONNECTED!</div>
       <div className="contact_icons">
-        <FontAwesomeIcon icon={faLinkedin} onClick={handleLinkedIn} className="contact_form_icon" />
-        <FontAwesomeIcon icon={faGithub} onClick={handleGitHub} className="contact_form_icon" />
+        <FontAwesomeIcon
+          icon={faLinkedin}
+          onClick={handleLinkedIn}
+          className="contact_form_icon"
+        />
+        <FontAwesomeIcon
+          icon={faGithub}
+          onClick={handleGitHub}
+          className="contact_form_icon"
+        />
       </div>
-      
+
       <div className="contact_container">
         <form onSubmit={handleSubmit} className="contact_form">
           <input
@@ -102,10 +112,7 @@ const Contact = () => {
         {error && <p className="error">{error}</p>}
         {success && <p className="success">{success}</p>}
       </div>
-
-    
     </div>
-    
   );
 };
 
