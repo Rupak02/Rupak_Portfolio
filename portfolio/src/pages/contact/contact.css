@@ -1,0 +1,80 @@
+.contact_title {
+  font-family: Syne;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 60px;
+  padding: 0 20px;
+  padding-bottom: 30px;
+}
+
+.contact_container {
+  background-color: #f8f8f8;
+  max-width: 600px;
+  height: 500px;
+  margin: 20px auto; /* Center the container horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+  text-align: center;
+  padding: 20px; /* Add padding for better spacing */
+  border-radius: 20px;
+}
+
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Take full width of container */
+  max-width: 500px; /* Max width for form fields */
+}
+
+.form_field,
+.form_field_message {
+  margin-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(149, 157, 165, 0.3) 0px 4px 12px; 
+  border: 0.5px solid #e0e0e0; 
+  padding: 10px;
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+  font-family: Manrope;
+  font-weight: 400;
+}
+
+.form_field:focus,
+.form_field_message:focus {
+  border-color: #c0a9a9; 
+  outline: none; 
+}
+
+
+.form_field_message {
+  height: 200px;
+}
+
+.submit_btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  font-family: Manrope;
+  background-color: black;
+  align-self: flex-end;
+  cursor: pointer;
+
+  box-shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
+}
+.contact_icons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 50px;
+}
+.contact_form_icon{
+  font-size: 50px;
+  cursor: pointer;
+  border-radius: 50px;
+}

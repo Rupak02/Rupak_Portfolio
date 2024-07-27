@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* justify-content: space-evenly; */
+  padding: 70px 10px;
+  flex-wrap: wrap; 
+}
+.container:nth-child(odd) .image {
+  order: 1;
+}
+.container:nth-child(odd) .content {
+  order: 2;
+}
+.container:nth-child(even) .image {
+  order: 2;
+}
+.container:nth-child(even) .content {
+  order: 1;
+}
+.image, .content {
+  /* flex: 1; */
+  min-width: 300px; 
+
+}
+.image img {
+  max-width: 200px;
+  height: auto;
+}
+.content_para {
+  max-width: 500px;
+  font-family: Poppins;
+  font-weight: 400;
+}
+.title{
+  font-family:Poppins;
+  font-size: 35px;
+  font-weight: 500;
+  color: #510283;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .container:nth-child(odd) .image,
+  .container:nth-child(odd) .content,
+  .container:nth-child(even) .image,
+  .container:nth-child(even) .content {
+    order: initial;
+  }
+  .image, .content {
+    min-width: 100%; /* Make the elements stack vertically */
+  }
+}
