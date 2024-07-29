@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.post("/api/contactDetails", async (req, res) => {
   const { name, email, message } = req.body;
-
+console.log(name);
     const newUser = new User({ name, email, message });
     console.log(newUser)
     await newUser.save();
