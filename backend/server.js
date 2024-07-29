@@ -27,7 +27,12 @@ app.post("/api/contactDetails", async (req, res) => {
 console.log(name);
     const newUser = new User({ name, email, message });
     console.log(newUser)
-    await newUser.save();
+    try{
+      await newUser.save();
+    }
+    catch(err){
+      console.log(err)
+    }
     res.status(200).json({ message: "Message received and saved to database" });
 
   //   catch (err) {
