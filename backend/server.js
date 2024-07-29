@@ -24,6 +24,8 @@ mongoose
     console.log("Failed to connect to DB");
   });
 
+  console.log(process.env.MONGO_URI)
+
 app.post("/api/contactDetails", async (req, res) => {
   const { name, email, message } = req.body;
 
