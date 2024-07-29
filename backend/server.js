@@ -12,34 +12,34 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose
+  .connect(
+    "mongodb+srv://Rupaknew:Rupak2024@rupak.msjczkd.mongodb.net/?retryWrites=true&w=majority&appName=Rupak"
+  )
   .then(() => {
     console.log("DB Connected");
   })
   .catch((err) => {
-    console.log(err)
+    console.log(err);
     console.log("Failed to connect to DB");
   });
 
-
-app.post("/api/contactDetails", async (req, res) => {
+app.post("https://rupak-portfolio.onrender.com/api/contactDetails", async (req, res) => {
   const { name, email, message } = req.body;
-console.log(name);
-    const newUser = new User({ name, email, message });
-    console.log(newUser)
-    try{
-      await newUser.save();
-    }
-    catch(err){
-      console.log(err)
-    }
-    res.status(200).json({ message: "Message received and saved to database" });
+  console.log(name);
+  const newUser = new User({ name, email, message });
+  console.log(newUser);
+  try {
+    await newUser.save();
+  } catch (err) {
+    console.log(err);
+  }
+  res.status(200).json({ message: "Message received and saved to database" });
 
   //   catch (err) {
   //   console.error(err);
   //   res.status(500).json({ message: "Failed to save message" });
   // }
-  
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -63,9 +63,6 @@ console.log(name);
     }
   });
 });
-
-  
-
 
 const PORT = process.env.PORT || 5000;
 
