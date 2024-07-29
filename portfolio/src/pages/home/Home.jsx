@@ -17,7 +17,7 @@ const Home = () => {
           <img src="profile.png" alt="profileImage" className="profile_pic" />
           <div className="hero_details">
             <div className="name">
-              <span className="name_span">I'm </span>Rupak
+              <span className="name_span">Hi, I'm </span>Rupak
             </div>
             <div className="hero_para">
               <p className="para">
