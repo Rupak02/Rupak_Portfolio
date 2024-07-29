@@ -26,7 +26,7 @@ app.post("/api/contactDetails", async (req, res) => {
   const { name, email, message } = req.body;
 
   
-});
+
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -56,7 +56,7 @@ app.post("/api/contactDetails", async (req, res) => {
       }
     }
   });
-
+});
   
 
 
