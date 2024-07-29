@@ -12,19 +12,15 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("DB Connected");
   })
-  .catch(() => {
+  .catch((err) => {
+    console.log(err)
     console.log("Failed to connect to DB");
   });
 
-  console.log(process.env.MONGO_URI)
 
 app.post("/api/contactDetails", async (req, res) => {
   const { name, email, message } = req.body;
